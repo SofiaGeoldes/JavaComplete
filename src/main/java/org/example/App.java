@@ -93,7 +93,11 @@ public class App
             System.out.println("\t");
             System.out.println(person.getName() + " 's hobbies: ");
             for(Hobby h : entry.getValue()) {
-                System.out.println("- " + h.hobbyName + " practiced " + h.frequency + " times a week in " + h.addresses.get(0).address + ", " + h.addresses.get(0).country.name);
+                String textToDisplay = "- " + h.hobbyName + " practiced " + h.frequency + " times a week in ";
+                for(Address address : h.addresses){
+                    textToDisplay += " ; " +  address.address + ", " + address.country.name;
+                    }
+                System.out.println(textToDisplay);
                 }
             }
         }
